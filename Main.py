@@ -28,6 +28,6 @@ for i in range(6):
         print("\nTry again! You have %d more tries!" %(6-i-1))
 
 if res == True:
-    print("You win!")
+    print("You win! The word is %s" %hidden_word)
 else:
-    print("You lose!")
+    print("You lose! The word is %s" %hidden_word)
