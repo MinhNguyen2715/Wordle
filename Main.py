@@ -3,7 +3,6 @@ import random
 ran_num = random.randint(0,2308)
 hidden_word = word[ran_num]
 res = 0
-print(hidden_word)
 
 #main
 print("THIS IS WORDLE!!! \n LET'S START! \n    _____")
