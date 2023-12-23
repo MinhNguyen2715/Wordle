@@ -7,10 +7,16 @@ res = 0
 #main
 print("THIS IS WORDLE!!! \n LET'S START! \n    _____")
 for i in range(6):
-    user = str()
-    while(len(user) != 5):
-        print("Word's length must be 5")
-        user = str(input("Enter your word: ")).lower()
+    user = str(input("Enter your word: "))
+
+    while True:
+        if len(user) < 5 or len(user) > 5:
+            print("Word's length must be 5")
+            user = str(input("Enter your word: ")).lower
+        else:
+            user.lower()
+            break
+  
     if user == hidden_word:
         print("Great!")
         res = 1
