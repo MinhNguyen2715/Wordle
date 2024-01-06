@@ -1,22 +1,29 @@
 from Word import word
 import random
+import Error
 ran_num = random.randint(0,2308)
 hidden_word = word[ran_num]
 res = 0
+last_word = []
+
 
 #main
 print("THIS IS WORDLE!!! \n LET'S START! \n    _____")
 for i in range(6):
-    user = str(input("Enter your word: "))
-
+    if i != 0:
+        print("Guessed:",*last_word,sep="\n")
     while True:
-        if len(user) < 5 or len(user) > 5:
-            print("Word's length must be 5")
-            user = str(input("Enter your word: ")).lower
-        else:
+        try:
+            user = str(input("Enter your word: "))
+            if len(user) < 5 or len(user) > 5:
+                raise Error.InvalidLength()
             user.lower()
             break
-  
+        except Error.InvalidLength as e:
+            print(str(e) + " has been raise")
+
+    last_word.append(user)
+
     if user == hidden_word:
         print("Great!")
         res = 1
